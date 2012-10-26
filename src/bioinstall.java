@@ -8,6 +8,7 @@
  * @author roemerhendrikx
  */
 import java.lang.*;
+import essentials.GetUserInput;
 public class bioinstall {
 
     /**
