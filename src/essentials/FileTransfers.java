@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package essentials;
-import java.lang.*;
+import org.apache.commons.io.FileUtils;
 import java.net.*;
 import java.io.*;
 /**
@@ -14,11 +14,12 @@ public class FileTransfers {
     
     public FileTransfers (){}
     
-    private static File combine(String apath)
+    private static File combinelocal(String apath)
 {
     URL location = FileTransfers.class.getProtectionDomain().getCodeSource().getLocation();
         
         String locacom = location.getPath();
+        locacom = locacom.replace("%20", " ");
         String finaldes = locacom + apath;
         
         File combined = new File(finaldes); 
@@ -26,45 +27,59 @@ public class FileTransfers {
         return combined;
 }
     
+    private static String combinehome(String apath){
+        String combined = System.getProperty("user.home")+ apath;
+        System.out.println("Combined");
+        return combined;
+    }
+    
+    //Main method
     public static void startTransfer(){
     
-        File file1 = combine("files/test.lua/");
+        File file1 = combinelocal("files/test.lua/");
         System.out.println(file1);
         
-        File file2 = combine("files/screenshot.jpg/");
-        System.out.println(file1);
+        File file2 = combinelocal("files/screenshot.jpg/");
+        System.out.println(file2);
         
+        File dest1 = null;
+        File dest2 = null;
+        File dest3 = null;
         
-        /*InputStream inStream = null;
-	OutputStream outStream = null;
-    	try{
- 
-    	    File afile =new File("Afile.txt");
-    	    File bfile =new File("Bfile.txt");
- 
-    	    inStream = new FileInputStream(afile);
-    	    outStream = new FileOutputStream(bfile);
- 
-    	    byte[] buffer = new byte[1024];
- 
-    	    int length;
-    	    //copy the file content in bytes 
-    	    while ((length = inStream.read(buffer)) > 0){
- 
-    	    	outStream.write(buffer, 0, length);
- 
-    	    }
- 
-    	    inStream.close();
-    	    outStream.close();
- 
-    	    System.out.println("File is copied successful!");
- 
-    	}catch(IOException e){
-    		e.printStackTrace();
-    	}
-    
-    */
+        if (("Mac OS X".equals(System.getProperty("os.name")))||("Linux".equals(System.getProperty("os.name"))))
+       {
+            String destbase = combinehome("/Library/Application Support/techniclauncher/");
+        System.out.println(destbase);
+        
+        dest1 = new File(destbase + "tekkit/resources/streaming/");
+            dest2 = new File (destbase + "tekkit/");
+            dest3 = new File (destbase + "tekkit/texturepacks/");
+        }
+        else if (("Windows 7".equals(System.getProperty("os.name")))) {
+            String destbase = combinehome("\\Local Settings\\Application Data\\techniclauncher\\");
+            System.out.println(destbase);
+            
+            dest1 = new File(destbase + "tekkit\\resources\\streaming\\");
+            dest2 = new File (destbase + "tekkit\\");
+            dest3 = new File (destbase + "tekkit\\texturepacks\\");
+            
+        }
+        else {
+            System.out.println("Failed");
+        }
+        
+        System.out.println(dest1);
+        System.out.println(dest2);
+        System.out.println(dest3);
+        
+        System.out.println(System.getProperty("os.name"));
+        
+        //try{
+        //FileUtils.copyFileToDirectory(file1, dest1);}
+        //catch (IOException fol) {
+        //    System.out.println("Helaas");
+        //}
+    }
+        
     
     }
-}
