@@ -3,18 +3,17 @@
  * and open the template in the editor.
  */
 package essentials;
-import java.net.*;
-import java.io.*;
+
 /**
  *
  * @author roemerhendrikx
  */
-public class InstallerInput extends javax.swing.JFrame {
+public class InstallingInput extends javax.swing.JFrame {
 
     /**
-     * Creates new form InstallerInput
+     * Creates new form InstallingInput
      */
-    public InstallerInput() {
+    public InstallingInput() {
         initComponents();
     }
 
@@ -27,17 +26,29 @@ public class InstallerInput extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cancelButton = new javax.swing.JButton();
+        jFrame1 = new javax.swing.JFrame();
         Line1 = new javax.swing.JLabel();
         Line2 = new javax.swing.JLabel();
         Line3 = new javax.swing.JLabel();
         Line4 = new javax.swing.JLabel();
         Picture = new javax.swing.JLabel();
         installButton = new javax.swing.JButton();
-        cancelButton = new javax.swing.JButton();
+        cancelButton1 = new javax.swing.JButton();
         websiteButton = new javax.swing.JButton();
+        Picture1 = new javax.swing.JLabel();
+        Line5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("BioCraft Installer");
+        cancelButton.setText("Cancel");
+        cancelButton.setPreferredSize(new java.awt.Dimension(426, 159));
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
+
+        jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFrame1.setTitle("BioCraft Installer");
 
         Line1.setText("Welcome and thank you for installing BioCraft. BioCraft");
         Line1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -57,10 +68,10 @@ public class InstallerInput extends javax.swing.JFrame {
             }
         });
 
-        cancelButton.setText("Cancel");
-        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+        cancelButton1.setText("Cancel");
+        cancelButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelButtonActionPerformed(evt);
+                cancelButton1ActionPerformed(evt);
             }
         });
 
@@ -71,43 +82,38 @@ public class InstallerInput extends javax.swing.JFrame {
             }
         });
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
+        org.jdesktop.layout.GroupLayout jFrame1Layout = new org.jdesktop.layout.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jFrame1Layout.createSequentialGroup()
+                .add(jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jFrame1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(Picture))
-                    .add(cancelButton))
+                    .add(cancelButton1))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                .add(jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jFrame1Layout.createSequentialGroup()
+                        .add(jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(Line4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(Line2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 341, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(Line3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 346, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(Line1))
                         .addContainerGap())
-                    .add(layout.createSequentialGroup()
+                    .add(jFrame1Layout.createSequentialGroup()
                         .add(0, 0, Short.MAX_VALUE)
                         .add(websiteButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(installButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
         );
-
-        layout.linkSize(new java.awt.Component[] {Line1, Line2, Line3, Line4}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
-
-        layout.linkSize(new java.awt.Component[] {installButton, websiteButton}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jFrame1Layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                .add(jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(Picture)
-                    .add(layout.createSequentialGroup()
+                    .add(jFrame1Layout.createSequentialGroup()
                         .add(9, 9, 9)
                         .add(Line1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 16, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -117,53 +123,66 @@ public class InstallerInput extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(Line4)))
                 .add(18, 18, 18)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                .add(jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jFrame1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(websiteButton)
                         .add(installButton))
-                    .add(cancelButton)))
+                    .add(cancelButton1)))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Picture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/essentials/new_nextbattle_logo_icon_by_bemacized-d59177o.png"))); // NOI18N
+
+        Line5.setText("Installing...");
+        Line5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(Picture1)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(Line5)
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(Picture1)
+                .add(18, 18, 18))
+            .add(layout.createSequentialGroup()
+                .add(51, 51, 51)
+                .add(Line5)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void websiteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_websiteButtonActionPerformed
-        URL url = null;
-        URI uri = null;
-        String urlString = "http://nextbattle.net";
-        
-        // Create a URL object
-        try {
-            url = new URL(urlString);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-
-        // Create a URI object from the String object returned by the URL object
-        try {
-            uri = new URI(url.toString());
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        try{
-        java.awt.Desktop.getDesktop().browse(uri);
-        }
-        catch (IOException fout3){}
-    }//GEN-LAST:event_websiteButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void installButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_installButtonActionPerformed
-       dispose();
-        FileTransfers.startTransfer();
-        System.out.println("InstallerInput finished running");
+    
     }//GEN-LAST:event_installButtonActionPerformed
+
+    private void cancelButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_cancelButton1ActionPerformed
+
+    private void websiteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_websiteButtonActionPerformed
+        
+    }//GEN-LAST:event_websiteButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -178,20 +197,20 @@ public class InstallerInput extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InstallerInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstallingInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InstallerInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstallingInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InstallerInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstallingInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InstallerInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InstallingInput.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InstallerInput().setVisible(true);
+                new InstallingInput().setVisible(true);
             }
         });
     }
@@ -200,9 +219,13 @@ public class InstallerInput extends javax.swing.JFrame {
     private javax.swing.JLabel Line2;
     private javax.swing.JLabel Line3;
     private javax.swing.JLabel Line4;
+    private javax.swing.JLabel Line5;
     private javax.swing.JLabel Picture;
+    private javax.swing.JLabel Picture1;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JButton cancelButton1;
     private javax.swing.JButton installButton;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JButton websiteButton;
     // End of variables declaration//GEN-END:variables
 }

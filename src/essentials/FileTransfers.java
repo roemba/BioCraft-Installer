@@ -3,14 +3,14 @@
  * and open the template in the editor.
  */
 package essentials;
-import org.apache.commons.io.FileUtils;
-import java.net.*;
 import java.io.*;
+import java.net.*;
+import org.apache.commons.io.FileUtils;
 /**
  *
  * @author roemerhendrikx
  */
-public class FileTransfers {
+public class FileTransfers{
     
     public FileTransfers (){}
     
@@ -36,17 +36,22 @@ public class FileTransfers {
     //Main method
     public static void startTransfer(){
     
+        InstallingInput handy = new InstallingInput();
+       handy.setVisible(true);
+       
+       NotSupport scherm2 = null;
+        
         File file1 = combinelocal("files/test.lua/");
-        System.out.println(file1);
+        System.out.println(file1.exists());
         
         File file2 = combinelocal("files/screenshot.jpg/");
-        System.out.println(file2);
+        System.out.println(file2.exists());
         
         File dest1 = null;
         File dest2 = null;
         File dest3 = null;
         
-        if (("Mac OS X".equals(System.getProperty("os.name")))||("Linux".equals(System.getProperty("os.name"))))
+        if ("Mac OS X".equals(System.getProperty("os.name")))
        {
             String destbase = combinehome("/Library/Application Support/techniclauncher/");
         System.out.println(destbase);
@@ -55,7 +60,7 @@ public class FileTransfers {
             dest2 = new File (destbase + "tekkit/");
             dest3 = new File (destbase + "tekkit/texturepacks/");
         }
-        else if (("Windows 7".equals(System.getProperty("os.name")))) {
+        else if ("Windows 7".equals(System.getProperty("os.name"))) {
             String destbase = combinehome("\\Local Settings\\Application Data\\techniclauncher\\");
             System.out.println(destbase);
             
@@ -66,19 +71,29 @@ public class FileTransfers {
         }
         else {
             System.out.println("Failed");
+            handy.dispose();
+            scherm2 = new NotSupport();
+            scherm2.setVisible(true);
+            System.out.println("filetransfers finished running");
+            return;
         }
-        
+            
+        System.out.println(dest1.exists());
         System.out.println(dest1);
-        System.out.println(dest2);
-        System.out.println(dest3);
+        System.out.println(file1.setReadable(true));
         
         System.out.println(System.getProperty("os.name"));
         
-        //try{
-        //FileUtils.copyFileToDirectory(file1, dest1);}
-        //catch (IOException fol) {
-        //    System.out.println("Helaas");
-        //}
+        try{
+        FileUtils.copyFileToDirectory(file1, dest2);
+        }
+        catch (IOException f) {
+            System.err.println(f.getMessage());
+                    return;
+        }
+        System.out.println("Gelukt");
+        
+        
     }
         
     

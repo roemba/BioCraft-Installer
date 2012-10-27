@@ -17,6 +17,7 @@ public class bioinstall {
         
         InstallerInput roemba = new InstallerInput();
         roemba.setVisible(true);
+        System.out.println("bioinstall finished running");
         
     }       
 }
