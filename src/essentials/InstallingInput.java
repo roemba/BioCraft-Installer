@@ -131,6 +131,7 @@ public class InstallingInput extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Installing... - BioCraft Installer");
 
         Picture1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/essentials/new_nextbattle_logo_icon_by_bemacized-d59177o.png"))); // NOI18N
 

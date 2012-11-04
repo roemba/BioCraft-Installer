@@ -157,7 +157,8 @@ public class InstallerInput extends javax.swing.JFrame {
 
     private void installButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_installButtonActionPerformed
        dispose();
-        FileTransfers.startTransfer();
+       FileTransfers ki = new FileTransfers();
+        ki.startTransfer();
         System.out.println("InstallerInput finished running");
     }//GEN-LAST:event_installButtonActionPerformed
 

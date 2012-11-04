@@ -32,6 +32,7 @@ public class NotSupport extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BioCraft Installer");
 
         Picture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/essentials/new_nextbattle_logo_icon_by_bemacized-d59177o.png"))); // NOI18N
 
